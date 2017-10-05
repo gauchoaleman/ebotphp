@@ -1,13 +1,7 @@
 <?php
 include "include/header.php";
-
-$link = mysqli_connect('localhost', 'root', 'root')
-or die('No se pudo conectar: ' . mysql_error());
-mysqli_query($link,"USE ebotanicoandino;");
+include "../include/connect_db.php";
 ?>
-<div class="page-header">
-<h1>ABM categorias</h1>
-</div>
 <?php 
 
 if( !isset($_POST["Accion"]))
