@@ -1,0 +1,8 @@
+AuthType Basic
+AuthName "Password Protected Area"
+AuthUserFile /var/www/html/ebotphp/admin/.htpasswd
+Require valid-user
+
+<Directory /home>
+    AllowOverride All
+</Directory>

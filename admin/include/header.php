@@ -7,4 +7,6 @@
  </head>
  <body>
  <div class="container">
- <?php error_reporting(E_ALL); ?>
+ <?php 
+ error_reporting(E_ALL); 
+ ?>

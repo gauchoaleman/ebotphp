@@ -59,6 +59,7 @@ CREATE TABLE `cattree` (
 --
 
 INSERT INTO `cattree` (`idcattree`, `idparentcat`, `description`) VALUES
+(0,0,'Raíz'),
 (1, 0, 'Gourmet'),
 (2, 1, 'Tés'),
 (3, 0, 'Jardinería'),
