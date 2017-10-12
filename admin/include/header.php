@@ -1,3 +1,8 @@
+<?php
+ session_start();
+ if( !isset($_SESSION['id']))
+    header("/admin/login.php");
+?>
 <html>
  <head>
   <title>Botanico Andino Backend</title>

@@ -14,6 +14,7 @@ if( $_FILES['picture']['name']) {
         unlink($destination);
         echo $destination."/".$_FILES['picture']['tmp_name'];
         echo "rename: ".copy( $_FILES['picture']['tmp_name'],$destination );
+        echo "Producto modificado.";
     }   
 }
 

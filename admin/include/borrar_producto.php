@@ -6,6 +6,7 @@ $line = mysqli_fetch_array($result, MYSQLI_ASSOC);
 if( $line["cuenta"] == 0 ){
     $query = "DELETE FROM products WHERE idproducts = ".$_POST["idproducts"].";";
     mysqli_query($link,$query) or die(mysqli_error());
+    echo "Producto borrado";
 }
 else echo "El producto figura en presupuestos, no se pudo borrar";
 ?>

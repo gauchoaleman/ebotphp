@@ -19,16 +19,15 @@ mysqli_select_db($link,'ebotanicoandino') or die('No se pudo seleccionar la base
 mysqli_query($link,"SET NAMES 'utf8'");
 
 $result = mysqli_query($link,"SELECT description,idparentcat,idcattree FROM cattree ");
-
-echo "<div class='row'>";
-echo "<div class='col-md-5' align='center'>Descripción</div>";
-echo "<div class='col-md-5'  align='center'>";
-echo "Categoría del padre";
-echo "</div>";
-echo "<div class='col-md-2'>&nbsp;</div>";
-echo "</div>";
-echo "</form>";
-
+?>
+<div class='row'>
+<div class='col-md-5' align='center'>Descripción</div>
+<div class='col-md-5'  align='center'>
+Categoría del padre
+</div>
+<div class='col-md-2'>&nbsp;</div>
+</div>
+<?php
 echo "<form method='post' data-toggle='validator' enctype='multipart/form-data' >";
 echo "<div class='row'>";
 echo "<div class='col-md-5'><input type='text' name='description' required></div>";
