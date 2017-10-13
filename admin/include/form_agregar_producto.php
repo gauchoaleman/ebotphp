@@ -49,7 +49,7 @@ while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
     CategoryCombo($line["cidcattree"]);
     echo "</div>";
     echo "<div class='col-md-2'><input type='text' name='price' value='".$line["price"]."' required></div>";
-    echo "<div class='col-md-3'><input type='file' name='picture' style='height: 26px;'><a target='_blank' href='../imgprod/".$line['idproducts'].".png'>Ver foto</a></div>";
+    echo "<div class='col-md-3'><input type='file' name='picture' style='height: 26px;'><a target='_blank' href='../img/prod/".$line['idproducts'].".png'>Ver foto</a></div>";
     echo "<input type='hidden' name='idproducts' value='".$line["idproducts"]."'>";
     echo "<input type='hidden' name='MAX_FILE_SIZE' value='3000000000' />";
     echo "<div class='col-md-1'><center><input type='submit' name='Accion' value='Borrar'></center></div>";

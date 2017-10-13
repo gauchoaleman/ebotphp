@@ -1,5 +1,5 @@
 <?php
-include "../include/connect_db.php";
+include_once "../include/connect_db.php";
 
 if ( !isset($_SESSION["idusers"]))
     echo "Acceso prohibido";

@@ -1,5 +1,6 @@
 <?php
-    include "../include/connect_db.php";
+    include_once "../include/connect_db.php";
+    include_once "../include/site_functions.php";
 ?>
 <html>
  <head>
@@ -13,13 +14,7 @@
 <?php
 session_start();
 
-function GetUserData($idusers)
-{
-    global $link;
-    $query = "SELECT * FROM users WHERE idusers=$idusers;";
-    $result = mysqli_query($link,$query) or die(mysqli_error());
-    return mysqli_fetch_array($result, MYSQLI_ASSOC);
-}
+
 function ChequearLogin($datos){
     global $link;
 
@@ -37,8 +32,14 @@ if(isset($_POST["email"])){
     if( ($idusers = ChequearLogin($_POST))!= 0 ){
         $_SESSION["idusers"] = $idusers;
         $UserData = GetUserData($idusers);
-        $_SESSION["name"] = $UserData["name"];
-        echo "Logueado exitoso.  Siga navegando <a href='menu.php'>Aquí</a>.";
+        ?>
+        <br>
+        <div class='row'>
+        <div class='col-md-12'>
+        Hola <?php echo $UserData["name"] ?>.  Logueado exitoso.  Siga navegando <a href='menu.php'>Aquí</a>
+        </div>
+        </div>
+        <?php
     }
     else {?>
     <div class='row'>

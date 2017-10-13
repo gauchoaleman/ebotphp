@@ -1,7 +1,9 @@
 <?php
- session_start();
- if( !isset($_SESSION['id']))
-    header("/admin/login.php");
+include_once "../include/site_functions.php";
+session_start();
+if( !isset($_SESSION['idusers']))
+    header("Location: login.php");
+
 ?>
 <html>
  <head>

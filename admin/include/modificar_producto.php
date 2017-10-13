@@ -10,7 +10,7 @@ if( $_FILES['picture']['name']) {
         echo "Formato permitido solamente png";
     else {
         echo "Temp file name size".filesize($_FILES['picture']['tmp_name']);
-        $destination = "../imgprod/".$_POST["idproducts"].".png";
+        $destination = "../img/prod/".$_POST["idproducts"].".png";
         unlink($destination);
         echo $destination."/".$_FILES['picture']['tmp_name'];
         echo "rename: ".copy( $_FILES['picture']['tmp_name'],$destination );

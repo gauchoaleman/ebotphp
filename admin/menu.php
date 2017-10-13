@@ -1,6 +1,5 @@
 <?php
-include "include/header.php";
-print_r($_SESSION);
+include_once "include/header.php";
 ?>
 
 <div class='row' >
@@ -9,7 +8,9 @@ print_r($_SESSION);
 <a href='menu.php' >Menu</a>|<a href='menu.php?seccion=ABMcategorias' >ABM de categorías</a>|<a href='menu.php?seccion=ABMproductos'>ABM de productos</a>
 </div>
 <div class='col-md-2' >
-<center>Hola <?php echo $_SESSION["name"]; ?>!</center>
+<center>Hola <?php 
+    $UserData=GetUserData($_SESSION["idusers"]);
+    echo $UserData["name"]; ?>!</center>
 </div>
 <div class='col-md-1' >
 <a href="logout.php">Logout</a>

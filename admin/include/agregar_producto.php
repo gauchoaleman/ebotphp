@@ -13,7 +13,7 @@ else if( strtolower($partes_ruta['extension']) != "png")
     echo "Formatos permitido solamente png";
 else {
     //echo "Temp file name size".filesize($_FILES['picture']['tmp_name']);
-    $destination = "../imgprod/$lastInsertId.".strtolower($partes_ruta['extension']);
+    $destination = "../img/prod/$lastInsertId.".strtolower($partes_ruta['extension']);
     //echo $destination."/".$_FILES['picture']['tmp_name'];
     //echo "rename: ".copy( $_FILES['picture']['tmp_name'],$destination );
     echo "Producto agregado";
