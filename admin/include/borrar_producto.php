@@ -1,6 +1,6 @@
 <?php
 $query = "SELECT COUNT(*) as cuenta FROM productsbudget WHERE products_idproducts = ".$_POST["idproducts"].";";
-
+//TODO borrar imagen de producto
 $result = mysqli_query($link,$query);
 $line = mysqli_fetch_array($result, MYSQLI_ASSOC);
 if( $line["cuenta"] == 0 ){

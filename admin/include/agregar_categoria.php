@@ -1,4 +1,5 @@
 <?php
+// Agrega categoría a partir de variables post que vienen de formulario
 $query = "INSERT INTO cattree (description,idparentcat)";
 $query .= " VALUES ('".$_POST['description']."',".$_POST['idparentcat'].");";
 

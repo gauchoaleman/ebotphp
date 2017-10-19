@@ -1,5 +1,5 @@
 <?php
-$query = "UPDATE products SET description = '".$_POST['pdescription']."',cattree_idcattree=".$_POST['cidcattree'].",price='".$_POST["price"]."'  WHERE idproducts = ".$_POST["idproducts"].";";
+$query = "UPDATE products SET name = '".$_POST['name']."',description = '".$_POST['pdescription']."',cattree_idcattree=".$_POST['cidcattree'].",price='".$_POST["price"]."'  WHERE idproducts = ".$_POST["idproducts"].";";
 mysqli_query($link,$query) or die(mysqli_error());
 
 if( $_FILES['picture']['name']) {

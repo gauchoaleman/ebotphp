@@ -1,4 +1,5 @@
 <?php
+// Borra categoría de base de datos.  Si la categoría figura en productos, no se permite borrar
 $query = "SELECT COUNT(*) as cuenta FROM products WHERE cattree_idcattree = ".$_POST["idcattree"].";";
 
 $result = mysqli_query($link,$query);
