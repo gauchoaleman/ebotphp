@@ -2,7 +2,7 @@
 //Agrega producto guardando imágen de producto en directorio /img/prod
 $query = "INSERT INTO products (name,description,cattree_idcattree,price)";
 $query .= " VALUES ('".$_POST['name']."','".$_POST['pdescription']."',".$_POST['cidcattree'].",'".$_POST['price']."');";
-echo $query;
+//echo $query;
 mysqli_query($link,$query) or die(mysqli_error($link));
 $lastInsertId = mysqli_insert_id ( $link );
 

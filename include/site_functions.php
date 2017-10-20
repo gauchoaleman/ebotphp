@@ -1,5 +1,5 @@
 <?php
-include_once "../include/connect_db.php";
+include_once "connect_db.php";
 
 //Devuelve Datos de usuario a partir de una id de usuario ($idusers)
 function GetUserData($idusers)
@@ -8,5 +8,21 @@ function GetUserData($idusers)
     $query = "SELECT * FROM users WHERE idusers=$idusers;";
     $result = mysqli_query($link,$query) or die(mysqli_error());
     return mysqli_fetch_array($result, MYSQLI_ASSOC);
+}
+
+function CategoryCombo($selected)
+{
+    global $link;
+    $result = mysqli_query($link,"SELECT description,idcattree FROM cattree ORDER BY idcattree");
+
+    echo "<select name='cidcattree'>";
+    while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+        echo "<option value='".$line['idcattree']."'";
+        if ($line['idcattree'] == $selected)
+            echo " selected ";
+        echo " >".$line['description']."</option>\n\r";
+    }
+    echo "</select>";
+    mysqli_free_result($result);
 }
 ?>

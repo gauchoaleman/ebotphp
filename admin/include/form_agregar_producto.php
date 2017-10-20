@@ -1,19 +1,5 @@
 <?php
-function CategoryCombo($selected)
-{
-    global $link;
-    $result = mysqli_query($link,"SELECT description,idcattree FROM cattree ORDER BY idcattree");
-
-    echo "<select name='cidcattree'>";
-    while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-        echo "<option value='".$line['idcattree']."'";
-        if ($line['idcattree'] == $selected)
-            echo " selected ";
-        echo " >".$line['description']."</option>\n\r";
-    }
-    echo "</select>";
-    mysqli_free_result($result);
-}
+include_once("../include/site_functions.php");
 
 mysqli_select_db($link,'ebotanicoandino') or die('No se pudo seleccionar la base de datos');
 mysqli_query($link,"SET NAMES 'utf8'");

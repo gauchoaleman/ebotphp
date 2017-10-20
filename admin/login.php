@@ -31,15 +31,7 @@ function ChequearLogin($datos){
 if(isset($_POST["email"])){
     if( ($idusers = ChequearLogin($_POST))!= 0 ){
         $_SESSION["idusers"] = $idusers;
-        $UserData = GetUserData($idusers);
-        ?>
-        <br>
-        <div class='row'>
-        <div class='col-md-12'>
-        Hola <?php echo $UserData["name"] ?>.  Logueado exitoso.  Siga navegando <a href='menu.php'>Aquí</a>
-        </div>
-        </div>
-        <?php
+        header('Location: menu.php');        
     }
     else {?>
     <div class='row'>

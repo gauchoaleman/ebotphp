@@ -18,6 +18,9 @@ if( isset($_GET["seccion"])) {
         case "listar_productos":
             include "listar_productos.php";
             break;
+        case "mostrar_producto":
+            include "mostrar_producto.php";
+            break;
         default:
             break;
     }
