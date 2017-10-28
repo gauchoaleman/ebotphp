@@ -8,5 +8,5 @@ if( $line["cuenta"] == 0 ){
     mysqli_query($link,$query) or die(mysqli_error());
     echo "Producto borrado";
 }
-else echo "El producto figura en presupuestos, no se pudo borrar";
+else echo "<div class='alert alert-warning'>El producto figura en presupuestos, no se pudo borrar</div>";
 ?>

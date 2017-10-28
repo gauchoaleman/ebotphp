@@ -6,9 +6,10 @@ session_start();
 <html>
  <head>
   <title>Botanico Andino Frontend</title>
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/grid.css" rel="stylesheet">
+  <?php include "include/general_css.php"; ?>
+
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <link href="css/grid.css" rel="stylesheet">
  </head>
  <body>
  <div class="container">

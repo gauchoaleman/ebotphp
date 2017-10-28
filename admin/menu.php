@@ -5,7 +5,7 @@ include_once "include/header.php";
 <div class='row' >
 <div class='col-md-9' >
 
-<a href='menu.php' >Menu</a>|<a href='menu.php?seccion=ABMcategorias' >ABM de categorías</a>|<a href='menu.php?seccion=ABMproductos'>ABM de productos</a>
+<a href='menu.php' >Menu</a>|<a href='menu.php?seccion=ABMcategorias' >ABM de categorías</a>|<a href='menu.php?seccion=ABMproductos'>ABM de productos</a>|<a href='../index.php'>Front End</a>
 </div>
 <div class='col-md-2' >
 <center>Hola <?php 

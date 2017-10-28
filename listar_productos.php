@@ -4,7 +4,7 @@ include_once "include/site_functions.php";
 
 //Ctd de columnas al mostrar productos
 $cols=3;
-$products_per_page=2;
+$products_per_page=4;
 
 $query = "SELECT * FROM products";
 $result = mysqli_query($link,$query);

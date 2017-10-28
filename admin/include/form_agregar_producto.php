@@ -8,7 +8,7 @@ $result = mysqli_query($link,"SELECT p.name as name,p.description as pdescriptio
 ?>
 <div class='row'>
 <div class='col-md-3'  align='center'>Nombre</div>
-<div class='col-md-2'  align='center' style='height: 52px;'>Categoría</div>
+<div class='col-md-2'  align='center' style='height: 56px;'>Categoría</div>
 <div class='col-md-2'  align='center'>Precio</div>
 <div class='col-md-3'  align='center'>Imágen</div>
 <div class='col-md-2'>&nbsp;</div>
@@ -17,7 +17,7 @@ $result = mysqli_query($link,"SELECT p.name as name,p.description as pdescriptio
 echo "<form method='post' data-toggle='validator' enctype='multipart/form-data' >";
 echo "<div class='row'>";
 echo "<div class='col-md-3'><input type='text' name='name' required></div>";
-echo "<div class='col-md-2' style='height: 58px;'>";
+echo "<div class='col-md-2' style='height: 62px;'>";
 CategoryCombo(FALSE);
 echo "</div>";
 echo "<div class='col-md-2'><input type='text' name='price' type='number'></div>";
@@ -27,6 +27,7 @@ echo "<div class='col-md-2'><center><input type='submit' name='Accion' value='Ag
 echo "<div class='col-md-12'><textarea rows='4' cols='130' required name='pdescription'>Descripcion</textarea></div>";
 echo "</div>";
 echo "</form>";
+echo "<br>";
 
 while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
     //print_r($line);
@@ -37,7 +38,7 @@ while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
     CategoryCombo($line["cidcattree"]);
     echo "</div>";
     echo "<div class='col-md-2' style='height: 78px;'><input type='text' name='price'  value='".$line["price"]."' required></div>";
-    echo "<div class='col-md-3' style='height: 78px;'><input type='file' name='picture' ><a target='_blank' href='../img/prod/".$line['idproducts'].".png'>Ver foto</a></div>";
+    echo "<div class='col-md-3' style='height: 78px;'><input type='file' name='picture' ><a target='_blank' href='../img/prod/".$line['idproducts'].".png'><br>Ver foto</a></div>";
     echo "<input type='hidden' name='idproducts' value='".$line["idproducts"]."'>";
     echo "<input type='hidden' name='MAX_FILE_SIZE' value='3000000000' />";
     echo "<div class='col-md-1' style='height: 78px;'><center><input type='submit' name='Accion' value='Borrar'></center></div>";

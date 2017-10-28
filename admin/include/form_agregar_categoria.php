@@ -31,7 +31,7 @@ Categoría del padre
 echo "<form method='post' data-toggle='validator' enctype='multipart/form-data' >";
 echo "<div class='row'>";
 echo "<div class='col-md-5'><input type='text' name='description' required></div>";
-echo "<div class='col-md-5' style='height: 58px;'>";
+echo "<div class='col-md-5' style='height: 60x;'>";
 ParentCombo(FALSE);
 echo "</div>";
 echo "<div class='col-md-2'><center><input type='submit' name='Accion' value='Agregar'></center></div>";
@@ -42,7 +42,7 @@ while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
     echo "<form method='post' data-toggle='validator' enctype='multipart/form-data' >";
     echo "<div class='row'>";
     echo "<div class='col-md-5'><input type='text' name='description' value='".$line["description"]."' required></div>";
-    echo "<div class='col-md-5' style='height: 58px;'>";
+    echo "<div class='col-md-5' style='height: 62px;'>";
     ParentCombo($line["idparentcat"]);
     echo "</div>";
     echo "<input type='hidden' name='idcattree' value='".$line["idcattree"]."'>";    
