@@ -8,14 +8,14 @@ function ProdQtyInBudget($idproducts,$idbudgets)
 }
 
 function AgregaraCarrito($idproducts,$qty)
-{
+{-+
     global $link;
 
     if( !$_SESSION['idbudgets'] ){
         $query = "INSERT INTO budgets";
         $_SESSION["idbudgets"] = $idbudgets = mysqli_insert_id($link);
     }
-    if( ProdQtyInBudget($idproducts,$idbudgets))
+    if( ProdQtyInBudget($idproducts,$idbudgets)) {
         $insquery = "INSERT INTO products_budget (budgets_idbudgets,qty,budgets_idbudgets,products_idproducts) VALUES ($idbudgets,$qty,$idbudgets,$idproducts);";
     }
 

@@ -9,67 +9,60 @@
     <title>Botanico Andino</title>
   </head>
   <body>
-<!--imagen cabecera---------------------------------------------------------------------------------------------------------------------------->
   <div class="container">
     <div class="row">
-          <div class="col-md-4">
-            <img class="img-responsive" src="img\Logobotandino.png" height="150" width="150" alt="Responsive image">
-          </div>
-<!--buscador--------------------------------------------------------------------------------------------------------------------------------->
-    <form class="form-inline my-2 my-lg-0">
-        <br>
-        <br>
-            <input class="form-control mr-sm-2" type="search" placeholder="Buscar producto" aria-label="Buscar producto">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-    </form>
-        <div class="col-md-3"></div>
+      <div class="col-md-4">
+        <img class="img-responsive" src="img\Logobotandino.png" height="109" width="150" alt="Responsive image">
+      </div>
+      <div class="col-md-4">
+        <form class="form-inline my-2 my-lg-0">
+        <br><br>
+        <br><br>
+          <input class="form-control mr-sm-2" type="search" placeholder="Buscar producto" aria-label="Buscar producto">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+        </form>
+      </div>
+      <div class="col-md-4">
+        &nbsp;
+      </div>
     </div>
+    <div class="row">
+      <div class="col-md-12">
 
-      <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-        <div class="container-fluid">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-          </div>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Jardinería <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Semillas</a></li>
-              </ul>
-            </li>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gourmet <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Té</a></li>
-              </ul>
-            </li>
-
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cosmética <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Jabón vegetal</a></li>
-                <li><a href="#">Mascarillas</a></li>
-                <li><a href="#">Sales de baño</a></li>
-                <li><a href="#">Aceite esencial</a></li>
-              </ul>
-            </li>
-
-
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-
+      </div>
+    </div>
   </div>
 </body>
 </html>
