@@ -9,12 +9,12 @@ $lastInsertId = mysqli_insert_id ( $link );
 $partes_ruta = pathinfo($_FILES['picture']['name']);
 
 if( $_FILES['picture']['error'] != 0)
-    echo "hay que setear el archivo de la imágen.";
+    echo "<div class='alert alert-warning'>hay que setear el archivo de la imágen.</div>";
 else if( strtolower($partes_ruta['extension']) != "png")
-    echo "Formatos permitido solamente png";
+    echo "<div class='alert alert-warning'>Formatos permitido solamente png</div>";
 else {
     $destination = "../img/prod/$lastInsertId.".strtolower($partes_ruta['extension']);
     copy( $_FILES['picture']['tmp_name'],$destination );
-    echo "Producto agregado";
+    echo "<div class='alert alert-primary'>Producto agregado</div>";
 }   
 ?>

@@ -27,28 +27,28 @@ Categoría del padre
 </div>
 <div class='col-md-2'>&nbsp;</div>
 </div>
+<form method='post' data-toggle='validator' enctype='multipart/form-data' >
+<div class='row'>
+<div class='col-md-5'><input type='text' name='description' required></div>
+<div class='col-md-5' style='height: 60x;'>
+<?php ParentCombo(FALSE); ?>
+</div>
+<div class='col-md-2'><center><center><button name='Accion' value='Agregar'><i class='fa fa-plus' aria-hidden='true' title='Agregar categoría'></i></center></center></div>
+</div>
+</form>
 <?php
-echo "<form method='post' data-toggle='validator' enctype='multipart/form-data' >";
-echo "<div class='row'>";
-echo "<div class='col-md-5'><input type='text' name='description' required></div>";
-echo "<div class='col-md-5' style='height: 60x;'>";
-ParentCombo(FALSE);
-echo "</div>";
-echo "<div class='col-md-2'><center><input type='submit' name='Accion' value='Agregar'></center></div>";
-echo "</div>";
-echo "</form>";
-
-while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-    echo "<form method='post' data-toggle='validator' enctype='multipart/form-data' >";
-    echo "<div class='row'>";
-    echo "<div class='col-md-5'><input type='text' name='description' value='".$line["description"]."' required></div>";
-    echo "<div class='col-md-5' style='height: 62px;'>";
-    ParentCombo($line["idparentcat"]);
-    echo "</div>";
-    echo "<input type='hidden' name='idcattree' value='".$line["idcattree"]."'>";    
-    echo "<div class='col-md-1'><center><input type='submit' name='Accion' value='Borrar'></center></div>";
-    echo "<div class='col-md-1'><center><input type='submit' name='Accion' value='Modificar'></center></div>";
-    echo "</div>";
-    echo "</form>";
+while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {?>
+<form method='post' data-toggle='validator' enctype='multipart/form-data' >
+<div class='row'>
+<div class='col-md-5'><input type='text' name='description' value='<?php echo $line["description"]; ?>' required></div>
+<div class='col-md-5' style='height: 62px;'>
+<?php ParentCombo($line["idparentcat"]);?>
+</div>
+<input type='hidden' name='idcattree' value='<?php echo $line["idcattree"];?>'>
+<div class='col-md-1'><center><button name='Accion' value='Borrar'><i class='fa fa-times' aria-hidden='true' title='Borrar categoría'></i></center></div>
+<div class='col-md-1'><center><button name='Accion' value='Modificar'><i class='fa fa-adjust' aria-hidden='true' title='Modificar categoría'></i></center></div>
+</div>
+</form>
+<?php
 }
 ?>

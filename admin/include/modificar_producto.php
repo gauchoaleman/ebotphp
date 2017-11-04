@@ -4,18 +4,19 @@ mysqli_query($link,$query) or die(mysqli_error());
 
 if( $_FILES['picture']['name']) {
     $partes_ruta = pathinfo($_FILES['picture']['name']);
-    print_r($_FILES);
-    echo "ext:".$partes_ruta['extension'];
+    //print_r($_FILES);
+    //echo "ext:".$partes_ruta['extension'];
     if( strtolower($partes_ruta['extension']) != "png")
-        echo "Formato permitido solamente png";
+        echo "<div class='alert alert-warning'>Formato permitido solamente png</div>";
     else {
-        echo "Temp file name size".filesize($_FILES['picture']['tmp_name']);
+        //echo "Temp file name size".filesize($_FILES['picture']['tmp_name']);
         $destination = "../img/prod/".$_POST["idproducts"].".png";
         unlink($destination);
-        echo $destination."/".$_FILES['picture']['tmp_name'];
-        echo "rename: ".copy( $_FILES['picture']['tmp_name'],$destination );
-        echo "Producto modificado.";
+        //echo $destination."/".$_FILES['picture']['tmp_name'];
+        copy( $_FILES['picture']['tmp_name'],$destination );
+        echo "<div class='alert alert-primay'>Producto modificado.</div>";
     }   
 }
-
+else 
+    echo "<div class='alert alert-primay'>Producto modificado.</div>";  
 ?>

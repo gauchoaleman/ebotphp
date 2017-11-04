@@ -9,42 +9,42 @@ $result = mysqli_query($link,"SELECT p.name as name,p.description as pdescriptio
 <div class='row'>
 <div class='col-md-3'  align='center'>Nombre</div>
 <div class='col-md-2'  align='center' style='height: 56px;'>Categoría</div>
-<div class='col-md-2'  align='center'>Precio</div>
-<div class='col-md-3'  align='center'>Imágen</div>
+<div class='col-md-1'  align='center'>Precio</div>
+<div class='col-md-4'  align='center'>Imágen</div>
 <div class='col-md-2'>&nbsp;</div>
 </div>
+<form method='post' data-toggle='validator' enctype='multipart/form-data' >
+<div class='row'>
+<div class='col-md-3'><input type='text' name='name' required></div>
+<div class='col-md-2' style='height: 62px;'>
+<?php CategoryCombo(FALSE); ?>
+</div>
+<div class='col-md-1'><input name='price' type='number'></div>
+<div class='col-md-4'><input type='file' name='picture' style='height: 26px;'></div>
+<input type='hidden' name='MAX_FILE_SIZE' value='3000000000' />
+<div class='col-md-2'><center><button name='Accion' value='Agregar'><i class='fa fa-plus' aria-hidden='true' title='Agregar producto'></i></center></div>
+<div class='col-md-12'><textarea rows='4' cols='120' required name='pdescription'>Descripción</textarea></div>
+</div>
+</form>
+<br>
 <?php
-echo "<form method='post' data-toggle='validator' enctype='multipart/form-data' >";
-echo "<div class='row'>";
-echo "<div class='col-md-3'><input type='text' name='name' required></div>";
-echo "<div class='col-md-2' style='height: 62px;'>";
-CategoryCombo(FALSE);
-echo "</div>";
-echo "<div class='col-md-2'><input type='text' name='price' type='number'></div>";
-echo "<div class='col-md-3'><input type='file' name='picture' style='height: 26px;'></div>";
-echo "<input type='hidden' name='MAX_FILE_SIZE' value='3000000000' />";
-echo "<div class='col-md-2'><center><input type='submit' name='Accion' value='Agregar'></center></div>";
-echo "<div class='col-md-12'><textarea rows='4' cols='130' required name='pdescription'>Descripcion</textarea></div>";
-echo "</div>";
-echo "</form>";
-echo "<br>";
-
 while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-    //print_r($line);
-    echo "<form method='post' data-toggle='validator' enctype='multipart/form-data'>";
-    echo "<div class='row'>";
-    echo "<div class='col-md-3' style='height: 78px;'><input type='text' name='name' value='".$line["name"]."' required></div>"; 
-    echo "<div class='col-md-2' style='height: 78px;'>";
-    CategoryCombo($line["cidcattree"]);
-    echo "</div>";
-    echo "<div class='col-md-2' style='height: 78px;'><input type='text' name='price'  value='".$line["price"]."' required></div>";
-    echo "<div class='col-md-3' style='height: 78px;'><input type='file' name='picture' ><a target='_blank' href='../img/prod/".$line['idproducts'].".png'><br>Ver foto</a></div>";
-    echo "<input type='hidden' name='idproducts' value='".$line["idproducts"]."'>";
-    echo "<input type='hidden' name='MAX_FILE_SIZE' value='3000000000' />";
-    echo "<div class='col-md-1' style='height: 78px;'><center><input type='submit' name='Accion' value='Borrar'></center></div>";
-    echo "<div class='col-md-1' style='height: 78px;'><center><input type='submit' name='Accion' value='Modificar'></center></div>";
-    echo "<div class='col-md-12'><textarea rows='4' cols='130' required name='pdescription'>".$line["pdescription"]."</textarea></div>";
-    echo "</div>";
-    echo "</form>";
+?>
+<form method='post' data-toggle='validator' enctype='multipart/form-data'>
+<div class='row'>
+<div class='col-md-3' style='height: 78px;'><input type='text' name='name' value='<?php echo $line["name"]; ?>' required></div>
+<div class='col-md-2' style='height: 78px;'>
+<?php CategoryCombo($line["cidcattree"]); ?>
+</div>
+<div class='col-md-1' style='height: 78px;'><input name='price' type='number' name='price'  value='<?php echo $line["price"];?>' required></div>
+<div class='col-md-4' style='height: 78px;'><input type='file' name='picture' ><a target='_blank' href='../img/prod/<?php echo $line['idproducts']?>.png'><br>Ver foto</a></div>
+<input type='hidden' name='idproducts' value='<?php echo $line["idproducts"]?>'>
+<input type='hidden' name='MAX_FILE_SIZE' value='3000000000' />
+<div class='col-md-1' style='height: 78px;'><center><button name='Accion' value='Borrar'><i class='fa fa-times' aria-hidden='true' title='Borrar producto'></i></center></div>
+<div class='col-md-1' style='height: 78px;'><center><button name='Accion' value='Modificar'><i class='fa fa-adjust' aria-hidden='true' title='Modificar producto'></i></center></div>
+<div class='col-md-12'><textarea rows='4' cols='120' required name='pdescription'><?php echo $line["pdescription"];?></textarea></div>
+</div>
+</form>
+<?php
 }
 ?>

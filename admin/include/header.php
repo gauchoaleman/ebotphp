@@ -13,7 +13,7 @@ if( !isset($_SESSION['idusers']))
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
  </head>
  <body>
- <div class=>
+ <div class="container">
  <?php 
  error_reporting(E_ALL); 
  ?>

@@ -5,22 +5,30 @@ function mostrar_producto($idproducts){
     global $link;
     $query = "SELECT * FROM products where idproducts=$idproducts";
     $result = mysqli_query($link,$query);
+    if( mysqli_num_rows ( $result )){
 
-    echo "<div class='row' >";
-        $line = mysqli_fetch_array($result, MYSQLI_ASSOC);
-        echo "<div class='col-md-4' >";
-        echo "<img src ='img/prod/".$line["idproducts"].".png' height='500' width='450'><br>";
-        echo "</div>";
-        echo "<div class='col-md-8' >";
-        echo "<strong>".$line["name"]."</strong><br>";
-        echo $line["description"]."<br>";
-        echo "<strong>$".$line["price"]."</strong>";
-        echo "</center></div>";
+        ?><div class='row'><?php
+            $line = mysqli_fetch_array($result, MYSQLI_ASSOC);?>
+            <div class='col-md-4' >
+            <img src ='img/prod/<?php echo $line["idproducts"]; ?>.png' height='500' width='450'><br>
+            </div>
+            <div class='col-md-8' >
+            <strong><?php echo $line["name"];?></strong><br>
+            <?php echo $line["description"];?><br>
+            <strong>$<?php echo $line["price"];?></strong>
+            </center>
+            <a href="index.php?seccion=agregar_a_carrito&idproducts=<?php echo $line["idproducts"]; ?>"><i title="Agregar a carrito" class="fa fa-shopping-cart" aria-hidden="true" ></i>
+            </div>
+            
+            <?php
+    }
+    else
+        echo "<div class='alert alert-danger'>No se encuentra la página.</div>";
 }
 if( isset($_GET["seccion"]) && isset($_GET["idproducts"])){
     mostrar_producto($_GET["idproducts"]);
 }
 else
-    echo "No se encuentra la página.";
+    echo "<div class='alert alert-danger'>No se encuentra la página.</div>";
 
 ?>

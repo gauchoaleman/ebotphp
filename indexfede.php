@@ -1,7 +1,8 @@
 <?php require "includefede/header.php"; ?>
 
-<?php require "includefede/sidebar.php"; ?>
-
+        <?php require "includefede/sidebar.php"; ?>
+        <center><?php require "includefede/carousel.php"; ?></center>
+    <?php require "includefede/footer.php"; ?>
     <!-- Librería jQuery requerida por los plugins de JavaScript -->
     <script src="http://code.jquery.com/jquery.js"></script>
 

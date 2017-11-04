@@ -4,7 +4,7 @@ include_once "include/header.php";
 <div class='row' >
 <div class='col-md-12' >
 
-<a href='index.php?seccion=listar_productos' >Listar productos</a>
+<a href='index.php?seccion=listar_productos' >Listar productos</a> &nbsp;|||&nbsp; <a href="index.php?seccion=mostrar_carrito"><i class="fa fa-shopping-cart" aria-hidden="true" title="Mirar carrito"></i></a>
 </div>
 </div>
 <div class='row'>
@@ -22,6 +22,9 @@ if( isset($_GET["seccion"])) {
             break;
         case "mostrar_carrito":
             include "mostrar_carrito.php";
+            break;
+        case "agregar_a_carrito":
+            include "agregar_a_carrito.php";
             break;
         default:
             break;
