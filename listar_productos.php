@@ -33,7 +33,7 @@ $page_query = "SELECT idproducts,name,price FROM products ";
 if( isset($_GET["cattree_idcattree"]) )
     $page_query .= "WHERE cattree_idcattree=".$_GET["cattree_idcattree"]." ";
 $page_query .= "ORDER BY idproducts ASC LIMIT ".$inicio."," . $products_per_page;
-echo $page_query;
+
 $page_res = mysqli_query($link,$page_query);
 //echo "qty:".$qty;
 $rows = ceil($qty/$cols);
