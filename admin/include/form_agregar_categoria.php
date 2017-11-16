@@ -30,7 +30,7 @@ Categoría del padre
 <form method='post' data-toggle='validator' enctype='multipart/form-data' >
 <div class='row'>
 <div class='col-md-5'><input type='text' name='description' required></div>
-<div class='col-md-5' style='height: 60x;'>
+<div class='col-md-5' >
 <?php ParentCombo(FALSE); ?>
 </div>
 <div class='col-md-2'><center><center><button name='Accion' value='Agregar'><i class='fa fa-plus' aria-hidden='true' title='Agregar categoría'></i></center></center></div>

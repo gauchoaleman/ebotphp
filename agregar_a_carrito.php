@@ -1,4 +1,17 @@
 <?php
+function NuevoEnCarrito($idproducts)
+{
+  global $link;
+  $query = "SELECT COUNT(*) as cuenta FROM productsbudget pb WHERE pb.products_idproducts=$idproducts AND pb.budgets_idbudgets=".$_SESSION['idbudgets'].";";
+  $result= mysqli_query($link,$query);
+  $line = mysqli_fetch_array($result, MYSQLI_ASSOC);
+  echo $query;
+  if( $line["cuenta"]==0 )
+    return TRUE;
+  else {
+    return FALSE;
+  }
+}
 
 function AgregaraCarrito($idproducts,$qty)
 {
@@ -11,11 +24,19 @@ function AgregaraCarrito($idproducts,$qty)
         $_SESSION["idbudgets"] = $idbudgets = mysqli_insert_id($link);
         $ins_prod_query = "INSERT INTO productsbudget (budgets_idbudgets,qty, ";
         $ins_prod_query .= "products_idproducts) VALUES ($idbudgets,$qty,$idproducts);";
+        $ins_prod_res = mysqli_query($link,$ins_prod_query);
         echo "ins_prod_query:$ins_prod_query";
+    }
+    else if( NuevoEnCarrito($idproducts))
+    {
+      $ins_prod_query = "INSERT INTO productsbudget (budgets_idbudgets,qty, ";
+      $ins_prod_query .= "products_idproducts) VALUES (".$_SESSION['idbudgets'].",$qty,$idproducts);";
+      $ins_prod_res = mysqli_query($link,$ins_prod_query);
     }
     else{
         $idbudgets = $_SESSION["idbudgets"];
         $updquery = "UPDATE productsbudget SET qty=qty+$qty WHERE budgets_idbudgets=$idbudgets AND products_idproducts=$idproducts;";
+        $updres = mysqli_query($link,$updquery);
         echo $updquery;
     }
 

@@ -16,7 +16,7 @@ $result = mysqli_query($link,"SELECT p.name as name,p.description as pdescriptio
 <form method='post' data-toggle='validator' enctype='multipart/form-data' >
 <div class='row'>
 <div class='col-md-3'><input type='text' name='name' required></div>
-<div class='col-md-2' style='height: 62px;'>
+<div class='col-md-2' >
 <?php CategoryCombo(FALSE); ?>
 </div>
 <div class='col-md-1'><input name='price' type='number'></div>
