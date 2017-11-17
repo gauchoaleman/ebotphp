@@ -1,12 +1,40 @@
 <?php
 include_once "include/header.php";
+include_once "include/preproc.php";
+
+
 ?>
 <div class='row' >
-<div class='col-md-12' >
-
-<a href='index.php?seccion=listar_productos' >Listar productos</a> &nbsp;|||&nbsp; <a href="index.php?seccion=mostrar_carrito"><i class="fa fa-shopping-cart" aria-hidden="true" title="Mirar carrito"></i></a>&nbsp;|||&nbsp;
-<a href='index.php?seccion=login' >Ingresar</a> &nbsp;|||&nbsp; <a href="index.php?seccion=register">Registrarse</a>
+<div class='col-md-7' >
+<a href='index.php?seccion=listar_productos' >Listar productos</a> &nbsp;|||&nbsp; <a href="index.php?seccion=mostrar_carrito"><i class="fa fa-shopping-cart" aria-hidden="true" title="Mirar carrito"></i></a>
 </div>
+
+
+<div class='col-md-1' >
+<center><a href="index.php?seccion=register">Registro</a></center>
+</div>
+
+<?php
+if( !isset($_SESSION["idusers"])){?>
+<div class='col-md-1' >
+<center><a href='index.php?seccion=login' >Ingresar</a></center>
+</div><?php }
+else {?>
+<div class='col-md-1' >
+<center><a href="index.php?seccion=logout">Salir</a></center>
+</div>
+<?php } ?>
+<div class='col-md-3' >
+<?php
+if( isset($_SESSION["idusers"])){
+  ?>
+  <center>Hola <?php
+      $UserData=GetUserData($_SESSION["idusers"]);
+      echo $UserData["name"]; ?>!</center>
+<?php
+}?>
+</div>
+
 </div>
 <div class='row'>
 <div class='col-md-12'>
@@ -30,6 +58,9 @@ if( isset($_GET["seccion"])) {
         case "login":
             include "login.php";
             break;
+        case "logout":
+            include "logout.php";
+            break;
         case "register":
             include "register.php";
             break;
@@ -44,6 +75,6 @@ else
 </div>
 </div>
 </div>
-<?php 
+<?php
 include "include/footer.php";
 ?>

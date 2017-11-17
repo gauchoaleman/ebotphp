@@ -14,29 +14,15 @@
 <?php
 session_start();
 
-
-function ChequearLogin($datos){
-    global $link;
-
-    $query = "SELECT idusers,name FROM users WHERE email='".$datos['email']."' AND password='".$datos['password']."';";
-    //echo $query;
-    $result = mysqli_query($link,$query) or die(mysqli_error());
-    $line = mysqli_fetch_array($result, MYSQLI_ASSOC);
-    if( !$line )
-        return 0;
-    else
-        return $line['idusers'];
-}
-
 if(isset($_POST["email"])){
-    if( ($idusers = ChequearLogin($_POST))!= 0 ){
+    if( ($idusers = ChequearLoginAdmin($_POST))!= 0 ){
         $_SESSION["idusers"] = $idusers;
-        header('Location: menu.php');        
+        header('Location: menu.php');
     }
     else {?>
     <div class='row'>
     <div class='col-md-12'>
-    Usuario y/o clave inválidos.
+    <div class="alert alert-warning">Usuario y/o clave inválidos.</div>
     </div>
     </div>
     <?php

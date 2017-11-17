@@ -8,19 +8,21 @@ include_once "include/header.php";
 <a href='menu.php' >Menu</a>&nbsp;|||&nbsp;<a href='menu.php?seccion=ABMcategorias' >Categorías</a>&nbsp;|||&nbsp;<a href='menu.php?seccion=ABMproductos'>Productos</a>&nbsp;|||&nbsp;<a href='../index.php'>Front End</a>
 </div>
 <div class='col-md-2' >
-<center>Hola <?php 
+<center>Hola <?php
     $UserData=GetUserData($_SESSION["idusers"]);
     echo $UserData["name"]; ?>!</center>
 </div>
 <div class='col-md-1' >
-<a href="logout.php">Logout</a>
+<a href="index.php?seccion=logout">Logout</a>
 </div>
 </div>
 <div class='row'>
 <div class='col-md-12'>
 <?php
 if(!isset($_SESSION["idusers"]))
-    echo "Debe estar logueado para acceder a ésta página. <a href='login.php'>Click aquí</a> para loguearse.";
+    echo "<div class='alert alert-info'>Debe estar logueado para acceder a ésta página. <a href='login.php'>Click aquí</a> para loguearse.</div>";
+else if( !$UserData["isadmin"] )
+  echo "<div class='alert alert-danger'>No tiene derechos para acceder a esta página.</div>";
 if( isset($_GET["seccion"])) {
 
     switch ($_GET["seccion"]) {
@@ -38,6 +40,6 @@ if( isset($_GET["seccion"])) {
 </div>
 </div>
 </div>
-<?php 
+<?php
 include "include/footer.php";
 ?>

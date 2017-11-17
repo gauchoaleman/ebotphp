@@ -41,7 +41,7 @@ while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 <input type='hidden' name='idproducts' value='<?php echo $line["idproducts"]?>'>
 <input type='hidden' name='MAX_FILE_SIZE' value='3000000000' />
 <div class='col-md-1' style='height: 78px;'><center><button name='Accion' value='Borrar'><i class='fa fa-times' aria-hidden='true' title='Borrar producto'></i></center></div>
-<div class='col-md-1' style='height: 78px;'><center><button name='Accion' value='Modificar'><i class='fa fa-adjust' aria-hidden='true' title='Modificar producto'></i></center></div>
+<div class='col-md-1' style='height: 78px;'><center><button name='Accion' value='Modificar'><i class='fa fa-pencil' aria-hidden='true' title='Modificar producto'></i></center></div>
 <div class='col-md-12'><textarea rows='4' cols='120' required name='pdescription'><?php echo $line["pdescription"];?></textarea></div>
 </div>
 </form>

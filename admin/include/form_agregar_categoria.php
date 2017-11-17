@@ -46,7 +46,7 @@ while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {?>
 </div>
 <input type='hidden' name='idcattree' value='<?php echo $line["idcattree"];?>'>
 <div class='col-md-1'><center><button name='Accion' value='Borrar'><i class='fa fa-times' aria-hidden='true' title='Borrar categoría'></i></center></div>
-<div class='col-md-1'><center><button name='Accion' value='Modificar'><i class='fa fa-adjust' aria-hidden='true' title='Modificar categoría'></i></center></div>
+<div class='col-md-1'><center><button name='Accion' value='Modificar'><i class='fa fa-pencil' aria-hidden='true' title='Modificar categoría'></i></center></div>
 </div>
 </form>
 <?php

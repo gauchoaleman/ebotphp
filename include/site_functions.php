@@ -25,4 +25,17 @@ function CategoryCombo($selected)
     echo "</select>";
     mysqli_free_result($result);
 }
+
+function ChequearLogin($datos){
+    global $link;
+
+    $query = "SELECT idusers,name FROM users WHERE email='".$datos['email']."' AND password='".$datos['password']."';";
+    //echo $query;
+    $result = mysqli_query($link,$query) or die(mysqli_error());
+    $line = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    if( !$line )
+        return 0;
+    else
+        return $line['idusers'];
+}
 ?>
