@@ -39,9 +39,9 @@ Categoría del padre
 <?php
 while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {?>
 <form method='post' data-toggle='validator' enctype='multipart/form-data' >
-<div class='row'>
+<div class='row' style='height: 50px;'>
 <div class='col-md-5'><input type='text' name='description' value='<?php echo $line["description"]; ?>' required></div>
-<div class='col-md-5' style='height: 62px;'>
+<div class='col-md-5'>
 <?php ParentCombo($line["idparentcat"]);?>
 </div>
 <input type='hidden' name='idcattree' value='<?php echo $line["idcattree"];?>'>

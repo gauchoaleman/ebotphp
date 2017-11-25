@@ -5,8 +5,8 @@ include_once "include/site_functions.php";
 if( isset($_GET["seccion"])) {
 
     switch ($_GET["seccion"]) {
-        case "login":
-          if(isset($_POST["email"])){
+        case "login_register":
+          if(isset($_POST["enviarlogin"])){
             if( ($idusers=ChequearLogin($_POST))!= 0 ){
               $_SESSION["idusers"] = $idusers;
             }

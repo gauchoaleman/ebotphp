@@ -36,10 +36,10 @@ else{
   <div class='row'>
   <div class='col-md-2'><center><strong>&nbsp;</strong></center></div>
   <div class='col-md-3'><center><a href='index.php?seccion=mostrar_producto&idproducts=<?php echo $line["idproducts"];?>'><?php echo $line["name"];?></a></center></div>
-  <div class='col-md-2'><center><?php echo $line["price"];?></center></div>
+  <div class='col-md-2'><center>$<?php echo $line["price"];?></center></div>
 <?php //todo ?>
   <div class='col-md-3'><center><input name='qty' type='number' name='qty'  value='<?php echo $line["qty"];?>' required onchange="myFunction(this.value)"></center></div>
-  <div class='col-md-2'><center><?php echo $line["price"]*$line["qty"];?></center></div>
+  <div class='col-md-2'><center>$<?php echo $line["price"]*$line["qty"];?></center></div>
 
   <?php $total+= $line["price"]*$line["qty"];?>
   </div>
@@ -52,14 +52,14 @@ else{
   <div class='col-md-3'>&nbsp;</div>
   <div class='col-md-2'><center><strong>&nbsp;</strong></center></div>
   <div class='col-md-3'><center><strong>Total</strong></center></div>
-  <div class='col-md-2'><center><strong><?php echo $total ?></strong></center></div>
+  <div class='col-md-2'><center><strong>$<?php echo $total ?></strong></center></div>
 
 </div><?php
 }
 
-if( !$_SESSION["idusers"]){?>
-    <div class="alert alert-info">Para pagar debe loguearse, <a href='index.php?seccion=login'>Click aquí</a></div>
+if( !isset($_SESSION["idusers"]) && CtdProductosEnCarrito()>=1 ){?>
+    <div class="alert alert-info">Para pagar debe loguearse, <a href='index.php?seccion=login_register'>Click aquí</a></div>
 <?php }
   else{
-    <div class="alert alert-info">Para pagar <a href='index.php?seccion=pagar'>Click aquí</a></div>
+    ?><div class="alert alert-info">Para enviar pedido <a href='index.php?seccion=enviar_pedido'>Click aquí</a></div><?php
 }

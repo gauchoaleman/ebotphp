@@ -47,7 +47,7 @@ else
 
 AgregaraCarrito($_GET["idproducts"],$qty);
 ?>
-<div class='alert alert-primary'>Producto agregado en <a href='index.php?seccion=mostrar_carrito'>carrito</a></div>
+<div class='alert alert-primary'>Producto agregado</div>
 <?php
-include "listar_productos.php";
+include "mostrar_carrito.php";
 ?>

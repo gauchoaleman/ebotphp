@@ -11,13 +11,13 @@ include_once "include/preproc.php";
 
 
 <div class='col-md-1' >
-<center><a href="index.php?seccion=register">Registro</a></center>
+<center><a href="index.php?seccion=login_register">Registro</a></center>
 </div>
 
 <?php
 if( !isset($_SESSION["idusers"])){?>
 <div class='col-md-1' >
-<center><a href='index.php?seccion=login' >Ingresar</a></center>
+<center><a href='index.php?seccion=login_register' >Ingresar</a></center>
 </div><?php }
 else {?>
 <div class='col-md-1' >
@@ -55,14 +55,17 @@ if( isset($_GET["seccion"])) {
         case "agregar_a_carrito":
             include "agregar_a_carrito.php";
             break;
-        case "login":
-            include "login.php";
-            break;
         case "logout":
             include "logout.php";
             break;
-        case "register":
-            include "register.php";
+        case "login_register":
+            include "login_register.php";
+            break;
+        case "enviar_pedido":
+            include "enviar_pedido.php";
+            break;
+        case "test_form":
+            include "test_form.php";
             break;
         default:
             include "portada.php";

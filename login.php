@@ -3,10 +3,7 @@
     include_once "include/site_functions.php";
 //session_start();
 
-
-
-
-if(isset($_POST["email"])){
+if(isset($_POST["enviarlogin"])){
     if( ($idusers = ChequearLogin($_POST))!= 0 ){
         //$_SESSION["idusers"] = $idusers;
         echo "<div class='alert alert-success'>Logueado con éxito</div>";
@@ -20,8 +17,10 @@ if(isset($_POST["email"])){
     </div>
     <?php
         include "include/loginform.php";
+        include "include/regform.php";
     }
 }
 else {
     include "include/loginform.php";
+    include "include/regform.php";
 }?>
