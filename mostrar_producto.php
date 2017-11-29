@@ -9,8 +9,15 @@ function mostrar_producto($idproducts){
 
         ?><div class='row'><?php
             $line = mysqli_fetch_array($result, MYSQLI_ASSOC);?>
-            <div class='col-md-4' >
-            <img src ='img/prod/<?php echo $line["idproducts"]; ?>.png' height='500' width='450'><br>
+            <div class='col-md-4'>
+            <img src ='img/prod/<?php echo $line["idproducts"]; ?>.png' width='450'
+            <?php
+            if( $line["cattree_idcattree"] == 15)
+              echo "height='500'";
+            elseif ( $line["cattree_idcattree"] == 14)
+              echo "height='637'>" ;
+            ?>
+            <br>
             </div>
             <div class='col-md-8' >
             <strong><?php echo $line["name"];?></strong><br>
@@ -19,7 +26,7 @@ function mostrar_producto($idproducts){
             </center>
             <a href="index.php?seccion=agregar_a_carrito&idproducts=<?php echo $line["idproducts"]; ?>"><i title="Agregar a carrito" class="fa fa-shopping-cart" aria-hidden="true" ></i>
             </div>
-            
+
             <?php
     }
     else

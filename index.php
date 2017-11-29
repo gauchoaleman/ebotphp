@@ -5,8 +5,20 @@ include_once "include/preproc.php";
 
 ?>
 <div class='row' >
-<div class='col-md-7' >
+<div class='col-md-2' >
 <a href='index.php?seccion=listar_productos' >Listar productos</a> &nbsp;|||&nbsp; <a href="index.php?seccion=mostrar_carrito"><i class="fa fa-shopping-cart" aria-hidden="true" title="Mirar carrito"></i></a>
+</div>
+
+<div class='col-md-1' >
+<a href='index.php?seccion=listar_productos&cattree_idcattree=15' ><center>Semillas</center></a>
+</div>
+
+<div class='col-md-1' >
+<a href='index.php?seccion=listar_productos&cattree_idcattree=14' ><center>Te</center></a>
+</div>
+
+<div class='col-md-3' >
+&nbsp;
 </div>
 
 
@@ -55,6 +67,9 @@ if( isset($_GET["seccion"])) {
         case "agregar_a_carrito":
             include "agregar_a_carrito.php";
             break;
+        case "vaciar_carrito":
+            include "vaciar_carrito.php";
+            break;
         case "logout":
             include "logout.php";
             break;
@@ -68,12 +83,12 @@ if( isset($_GET["seccion"])) {
             include "test_form.php";
             break;
         default:
-            include "portada.php";
+            include "listar_productos.php";
             break;
     }
 }
 else
-    include "portada.php";
+    include "listar_productos.php";
 ?>
 </div>
 </div>

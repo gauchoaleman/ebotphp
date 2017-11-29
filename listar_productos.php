@@ -4,7 +4,7 @@ include_once "include/site_functions.php";
 
 //Ctd de columnas al mostrar productos
 $cols=3;
-$products_per_page=2;
+$products_per_page=12;
 
 $query = "SELECT * FROM products ";
 if( isset($_GET["cattree_idcattree"]) )
@@ -29,14 +29,14 @@ else{
 }
 //calculo el total de páginas
 $total_paginas = ceil($qty / $products_per_page);
-$page_query = "SELECT idproducts,name,price FROM products ";
+$page_query = "SELECT idproducts,name,price,cattree_idcattree FROM products ";
 if( isset($_GET["cattree_idcattree"]) )
     $page_query .= "WHERE cattree_idcattree=".$_GET["cattree_idcattree"]." ";
 $page_query .= "ORDER BY idproducts ASC LIMIT ".$inicio."," . $products_per_page;
 
 $page_res = mysqli_query($link,$page_query);
 //echo "qty:".$qty;
-$rows = ceil($qty/$cols);
+$rows = ceil($qty/$cols)  ;
 //echo "rows:".$rows;
 $last_row_cols = $qty % $cols;
 //echo "last_row_cols = ".$last_row_cols;
@@ -54,7 +54,7 @@ for( $i=1;$i<=$rows;$i++){
             continue;
         if( $line = mysqli_fetch_array($page_res, MYSQLI_ASSOC)) {?>
             <div class='col-md-4' ><center><a href='index.php?seccion=mostrar_producto&idproducts=<?php echo $line["idproducts"];?>'>
-            <img src ='img/prod/<?php echo $line["idproducts"]; ?>.png' height='150' width='150'><br>
+            <img src ='img/prod/<?php echo $line["idproducts"]; ?>.png' height='150' width='<?php echo ($line["cattree_idcattree"] == 15 ? 170 : 106);?>' ><br>
             <?php echo $line["name"];?><br>
             <center>$<?php echo $line["price"]; ?>
             </a>&nbsp;<a href="index.php?seccion=agregar_a_carrito&idproducts=<?php echo $line["idproducts"]; ?>"><i class="fa fa-shopping-cart" aria-hidden="true" title="Agregar a carrito"></i></center></a>

@@ -38,4 +38,17 @@ function ChequearLogin($datos){
     else
         return $line['idusers'];
 }
+
+function ChequearLoginAdmin($datos){
+    global $link;
+
+    $query = "SELECT idusers,name FROM users WHERE email='".$datos['email']."' AND password='".$datos['password']."' AND isadmin=TRUE;";
+    //echo $query;
+    $result = mysqli_query($link,$query) or die(mysqli_error());
+    $line = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    if( !$line )
+        return 0;
+    else
+        return $line['idusers'];
+}
 ?>

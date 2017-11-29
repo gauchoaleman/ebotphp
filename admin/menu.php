@@ -5,7 +5,7 @@ include_once "include/header.php";
 <div class='row' >
 <div class='col-md-9' >
 
-<a href='menu.php' >Menu</a>&nbsp;|||&nbsp;<a href='menu.php?seccion=ABMcategorias' >Categorías</a>&nbsp;|||&nbsp;<a href='menu.php?seccion=ABMproductos'>Productos</a>&nbsp;|||&nbsp;<a href='../index.php'>Front End</a>
+<a href='menu.php' >Menu</a>&nbsp;|||&nbsp;<a href='menu.php?seccion=ABMcategorias' >Categorías</a>&nbsp;|||&nbsp;<a href='menu.php?seccion=ABMproductos'>Productos</a>&nbsp;|||&nbsp;<a href='menu.php?seccion=ver_pedidos'>Ver pedidos</a>&nbsp;|||&nbsp;<a href='../index.php'>Front End</a>
 </div>
 <div class='col-md-2' >
 <center>Hola <?php
@@ -13,7 +13,7 @@ include_once "include/header.php";
     echo $UserData["name"]; ?>!</center>
 </div>
 <div class='col-md-1' >
-<a href="index.php?seccion=logout">Logout</a>
+<a href="logout.php">Logout</a>
 </div>
 </div>
 <div class='row'>
@@ -31,6 +31,9 @@ if( isset($_GET["seccion"])) {
             break;
         case "ABMproductos":
             include "abm_productos.php";
+            break;
+        case "ver_pedidos":
+            include "ver_pedidos.php";
             break;
         default:
             break;

@@ -8,7 +8,7 @@ if( !isset($_SESSION['idusers']))
 <html>
  <head>
   <title>Botanico Andino Backend</title>
-  <?php include "../include/general_css.php"; ?>
+  <?php include "include/general_css.php"; ?>
   <link href="css/grid.css" rel="stylesheet">
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
  </head>

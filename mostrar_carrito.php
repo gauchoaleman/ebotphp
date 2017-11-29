@@ -57,6 +57,8 @@ else{
 </div><?php
 }
 
+?><div class="alert alert-info"><a href='index.php?seccion=vaciar_carrito'>Vaciar carrito</a></div><?php
+
 if( !isset($_SESSION["idusers"]) && CtdProductosEnCarrito()>=1 ){?>
     <div class="alert alert-info">Para pagar debe loguearse, <a href='index.php?seccion=login_register'>Click aquí</a></div>
 <?php }
