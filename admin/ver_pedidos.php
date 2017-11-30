@@ -7,9 +7,9 @@ function MostrarBudget($idbudgets){
   $result= mysqli_query($link,$query);
   ?>
   <div class='row'>
-  <div class='col-md-2'><center><strong>&nbsp;</strong></center></div>
-  <div class='col-md-3'><center><strong>Nombre</strong></center></div>
-  <div class='col-md-2'><center><strong>Precio</strong></center></div>
+
+  <div class='col-md-4'><center><strong>Nombre</strong></center></div>
+  <div class='col-md-3'><center><strong>Precio</strong></center></div>
   <div class='col-md-3'><center><strong>Cantidad</strong></center></div>
   <div class='col-md-2'><center><strong>Total</strong></center></div>
   </div><?php
@@ -18,9 +18,8 @@ function MostrarBudget($idbudgets){
     <form method='GET' data-toggle='validator' action="menu.php?seccion=ver_pedidos">
       <input type='hidden' name='idproducts' value='<?php echo $line["idproducts"]?>'>
       <div class='row'>
-          <div class='col-md-2'><center><strong>&nbsp;</strong></center></div>
-          <div class='col-md-3'><center><a href='../index.php?seccion=mostrar_producto&idproducts=<?php echo $line["idproducts"];?>'><?php echo $line["name"];?></a></center></div>
-          <div class='col-md-2'><center>$<?php echo $line["price"];?></center></div>
+          <div class='col-md-4'><center><a href='../index.php?seccion=mostrar_producto&idproducts=<?php echo $line["idproducts"];?>'><?php echo $line["name"];?></a></center></div>
+          <div class='col-md-3'><center>$<?php echo $line["price"];?></center></div>
           <div class='col-md-3'><center><input name='qty' type='number' name='qty'  value='<?php echo $line["qty"];?>' required onchange="myFunction(this.value)"></center></div>
           <div class='col-md-2'><center>$<?php echo $line["price"]*$line["qty"];?></center></div>
           <?php $total+= $line["price"]*$line["qty"];?>

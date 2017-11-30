@@ -4,7 +4,8 @@ include_once "include/preproc.php";
 
 
 ?>
-<div class='row' >
+<nav style="background-color: #03c112; ">
+  <div class='row' >
 <div class='col-md-2' >
 <a href='index.php?seccion=listar_productos' >Listar productos</a> &nbsp;|||&nbsp; <a href="index.php?seccion=mostrar_carrito"><i class="fa fa-shopping-cart" aria-hidden="true" title="Mirar carrito"></i></a>
 </div>
@@ -20,8 +21,6 @@ include_once "include/preproc.php";
 <div class='col-md-3' >
 &nbsp;
 </div>
-
-
 <div class='col-md-1' >
 <center><a href="index.php?seccion=login_register">Registro</a></center>
 </div>
@@ -48,6 +47,7 @@ if( isset($_SESSION["idusers"])){
 </div>
 
 </div>
+</nav>
 <div class='row'>
 <div class='col-md-12'>
 <?php
