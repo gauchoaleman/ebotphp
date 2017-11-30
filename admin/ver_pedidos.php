@@ -19,7 +19,7 @@ function MostrarBudget($idbudgets){
       <input type='hidden' name='idproducts' value='<?php echo $line["idproducts"]?>'>
       <div class='row'>
           <div class='col-md-2'><center><strong>&nbsp;</strong></center></div>
-          <div class='col-md-3'><center><a href='index.php?seccion=mostrar_producto&idproducts=<?php echo $line["idproducts"];?>'><?php echo $line["name"];?></a></center></div>
+          <div class='col-md-3'><center><a href='../index.php?seccion=mostrar_producto&idproducts=<?php echo $line["idproducts"];?>'><?php echo $line["name"];?></a></center></div>
           <div class='col-md-2'><center>$<?php echo $line["price"];?></center></div>
           <div class='col-md-3'><center><input name='qty' type='number' name='qty'  value='<?php echo $line["qty"];?>' required onchange="myFunction(this.value)"></center></div>
           <div class='col-md-2'><center>$<?php echo $line["price"]*$line["qty"];?></center></div>
@@ -28,7 +28,7 @@ function MostrarBudget($idbudgets){
   </form>
 
 <?php }
- echo "TOTAL: $total<br>";
+ echo "TOTAL: $ $total<br>";
 }
 
 function MostrarDetalleCliente($users_idusers){

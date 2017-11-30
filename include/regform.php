@@ -4,7 +4,7 @@
 <div class='col-md-6'>
 
   <div class='row' >
-  <div class='col-md-6' style="height: 138px;" >
+  <div class='col-md-6' style="height: 139px;" >
     Nombre: <input type='text' name='name' size=15 required><br>
     Apellido: <input type='text' name='surname' size=15 required><br>
 </div>

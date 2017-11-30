@@ -36,7 +36,7 @@ $page_query .= "ORDER BY idproducts ASC LIMIT ".$inicio."," . $products_per_page
 
 $page_res = mysqli_query($link,$page_query);
 //echo "qty:".$qty;
-$rows = ceil($qty/$cols)  ;
+$rows = ceil($qty/$cols) ;
 //echo "rows:".$rows;
 $last_row_cols = $qty % $cols;
 //echo "last_row_cols = ".$last_row_cols;
@@ -48,10 +48,11 @@ echo "<div class='col-md-10' ></div>";
 echo "</div>";
 */
 for( $i=1;$i<=$rows;$i++){
+  if( $i==$rows && $j>$last_row_cols )
+      continue;
     echo "<div class='row' >";
     for( $j=1;$j<=$cols;$j++){
-        if( $i==$rows && $j>$last_row_cols )
-            continue;
+
         if( $line = mysqli_fetch_array($page_res, MYSQLI_ASSOC)) {?>
             <div class='col-md-4' ><center><a href='index.php?seccion=mostrar_producto&idproducts=<?php echo $line["idproducts"];?>'>
             <img src ='img/prod/<?php echo $line["idproducts"]; ?>.png' height='150' width='<?php echo ($line["cattree_idcattree"] == 15 ? 170 : 106);?>' ><br>

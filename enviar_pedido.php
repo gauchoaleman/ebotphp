@@ -1,6 +1,6 @@
 <?php
 if( isset($_SESSION["idbudgets"]) && isset($_SESSION["idusers"])){
-  $query = "UPDATE budgets SET users_idusers=".$_SESSION["idusers"]." AND Status = 'Enviado' WHERE idbudgets=".$_SESSION["idbudgets"].";";
+  $query = "UPDATE budgets SET users_idusers=".$_SESSION["idusers"].", Status = 'Enviado' WHERE idbudgets=".$_SESSION["idbudgets"].";";
   mysqli_query($link,$query);
 ?><div class='alert alert-primary'>Los datos del pedido se enviaron, pronto nos comunicaremos con usted.</div><?php
 }
